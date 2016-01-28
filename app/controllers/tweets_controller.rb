@@ -8,7 +8,8 @@ class TweetsController < ApplicationController
 		#when we used params[:tweet], it was equivalent to @tweet = Tweet.new(content: 'whatever your tweet is')
 		
 		@tweet = Tweet.new(tweet_params)
-		puts "AN ERROR MESSAGE: #{@tweet.inspect}" #puts outputs your message to the server logs (in terminal)
+		@tweet.save
+		redirect_to new_tweet_path
 	end
 
 
