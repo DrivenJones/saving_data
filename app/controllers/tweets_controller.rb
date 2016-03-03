@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-	
+	before_action :authenticate_user!
 	def new
 		@tweet = Tweet.new
 	end
@@ -8,6 +8,7 @@ class TweetsController < ApplicationController
 		#when we used params[:tweet], it was equivalent to @tweet = Tweet.new(content: 'whatever your tweet is')
 		
 		@tweet = Tweet.new(tweet_params)
+		@tweet.user = current_user
 		@tweet.save
 		redirect_to new_tweet_path
 	end
