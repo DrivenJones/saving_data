@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets 
-  validates :type, inclusion: { in: %w(Designer RegularUser)}
+  # validates :type, inclusion: { in: %w(Designer RegularUser)}
 
   # validate :type_is_either_designer_or_regular_user
 

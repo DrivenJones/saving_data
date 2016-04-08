@@ -1,5 +1,7 @@
 This is the new tweet page
 <%= simple_form_for @tweet do |f| %>
+	<%= f.error_notification %>
   <%= f.input :content %>
+  <%= f.input :avatar %>
   <%= f.button :submit %>
 <% end %>
